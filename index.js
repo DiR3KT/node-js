@@ -4,14 +4,14 @@ var app = express();
 var port = process.env.PORT || 8080;
 var api_key = "RGAPI-92178538-42de-44e4-a606-2beffec43318"
 
+app.use(require("cors"))
+
 app.get('/', function(req, res){
   res.send("oui");
 })
 
 app.get('/championRotation', function(req, res){
   request('https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='+api_key, function (error, response, body) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send(body);
   })
 })
