@@ -19,8 +19,6 @@ app.get('/championRotation', function(req, res){
   })
 })
 
-var name;
-
 app.get('/getData/:region/:name', function(req, res){
     var region = req.params.region;
     var name = req.params.name;
@@ -31,7 +29,18 @@ app.get('/getData/:region/:name', function(req, res){
     request(URL+api_key, function (error, response, body) {
       res.jsonp(body);
     })
+})
 
+app.get('/getRank/:region/:id', function(req, res){
+	var region = req.params.region;
+	var id = req.params.id;
+	if (region == "euw") {
+		region = "euw1";
+	}
+	URL = "https://"+region+".api.riotgames.com/lol/league/v4/positions/by-summoner/"+id+"?api_key=";
+	request(URL+api_key, function (error, response, body) {
+      res.jsonp(body);
+    })
 })
 
 app.listen(port, function(){
