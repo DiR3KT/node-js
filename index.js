@@ -17,6 +17,8 @@ app.get('/championRotation', function(req, res){
 var name;
 
 app.get('/getData/:region/:name', function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var region = req.params.region;
     var name = req.params.name;
     if (region == "euw") {
@@ -26,6 +28,7 @@ app.get('/getData/:region/:name', function(req, res){
     request(URL+api_key, function (error, response, body) {
       res.send(body);
     })
+
 })
 
 app.listen(port, function(){
