@@ -10,6 +10,8 @@ app.get('/', function(req, res){
 
 app.get('/championRotation', function(req, res){
   request('https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='+api_key, function (error, response, body) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send(body);
   })
 })
