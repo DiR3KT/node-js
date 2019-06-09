@@ -1,10 +1,8 @@
 var express = require('express');
 var request = require("request");
 var app = express();
-
+var port = process.env.PORT || 8080;
 var api_key = "RGAPI-92178538-42de-44e4-a606-2beffec43318"
-
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 app.get('/', function(req, res){
   res.send("oui");
@@ -30,4 +28,6 @@ app.get('/getData/:region/:name', function(req, res){
     })
 })
 
-app.listen(3000);
+app.listen(port, function(){
+  console.log("Node is listening on port "+port+"!");
+});
