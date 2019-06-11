@@ -4,7 +4,7 @@ var cors = require('cors');
 var app = express();
 
 var port = process.env.PORT || 8080;
-var api_key = "RGAPI-3f398299-aa33-4534-b453-7c3d76367ebe"
+var api_key = "RGAPI-e964509e-3677-4f41-ad2a-47d9c0d46e20"
 
 app.use(cors());
 
