@@ -7,42 +7,60 @@ var port = process.env.PORT || 8080; //Useful for Heroku hosting
 var api_key = "RGAPI-e964509e-3677-4f41-ad2a-47d9c0d46e20" //My API key
 
 app.use(cors()); //Disables CORS
-app.use(express.static(__dirname+'/public')); //Makes "summoner" folder a static folder
 
 
-//Get the free champion rotation from Riot's servers.
+//API call: champion rotation.
 app.get('/championRotation', function(req, res){
   request('https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='+api_key, function (error, response, body) {
     res.jsonp(body);
   })
 })
 
-//API call to summoner data.
+//API call: summoner data.
 app.get('/getData/:region/:name', function(req, res){
     var region = req.params.region;
     var name = req.params.name;
     if (region == "euw") {
       region = "euw1";
     }
-    URL = "https://"+region+".api.riotgames.com/lol/summoner/v4/summoners/by-name/"+name+"?api_key=";
-    request(URL+api_key, function (error, response, body) {
+    URL = "https://"+region+".api.riotgames.com/lol/summoner/v4/summoners/by-name/"+name+"?api_key="+api_key;
+    request(URL, function (error, response, body) {
       res.jsonp(body);
     })
 })
 
-//API call to summoner rank.
+//API call: summoner rank.
 app.get('/getRank/:region/:id', function(req, res){
 	var region = req.params.region;
 	var id = req.params.id;
 	if (region == "euw") {
 		region = "euw1";
 	}
-	URL = "https://"+region+".api.riotgames.com/lol/league/v4/positions/by-summoner/"+id+"?api_key=";
-	request(URL+api_key, function (error, response, body) {
+	URL = "https://"+region+".api.riotgames.com/lol/league/v4/positions/by-summoner/"+id+"?api_key="+api_key;
+	request(URL, function (error, response, body) {
       res.jsonp(body);
-    })
+  })
 })
 
+//API call: game history.
+app.get('/getHistory/:region/:id/:beginIndex/:endIndex', function(req, res){
+  var region = req.params.region;
+  var id = req.params.id;
+  var beginIndex = req.params.beginIndex;
+  var endIndex = req.params.endIndex;
+  if (region == "euw") {
+		region = "euw1";
+	}
+  if (beginIndex > endIndex){
+    res.send("error");
+  }
+  else{
+    URL = "https://"+region+".api.riotgames.com/lol/match/v4/matchlists/by-account/"+id+"?api_key="+api_key+"&beginIndex="+beginIndex+"&endIndex="+endIndex;
+    request(URL, function (error, response, body) {
+        res.jsonp(body);
+    })
+  }
+})
 
 
 //Starts the server.
