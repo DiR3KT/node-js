@@ -51,9 +51,6 @@ app.get('/getHistory/:region/:id/:beginIndex/:endIndex', function(req, res){
   if (region == "euw") {
 		region = "euw1";
 	}
-  if (beginIndex > endIndex){
-    res.send("error");
-  }
   else{
     URL = "https://"+region+".api.riotgames.com/lol/match/v4/matchlists/by-account/"+id+"?api_key="+api_key+"&beginIndex="+beginIndex+"&endIndex="+endIndex;
     request(URL, function (error, response, body) {
