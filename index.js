@@ -4,6 +4,7 @@ var cors = require('cors');
 var app = express();
 
 var port = process.env.PORT || 8080; //Useful for Heroku hosting
+var api_key = ""; //Your API key from Riot
 
 app.use(cors()); //Disables CORS
 
