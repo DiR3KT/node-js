@@ -7,7 +7,12 @@ var port = process.env.PORT || 8080; //Useful for Heroku hosting
 var api_key = ""; //Your API key from Riot
 
 app.use(cors()); //Disables CORS
+app.use(express.static("public"));
 
+//Gives index.html on "/" call
+app.get("/", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
+});
 
 //API call: champion rotation.
 app.get('/championRotation', function(req, res){
