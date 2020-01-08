@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bruh.gg</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src=index.js charset="utf-8"></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">
+        <span>Bruh.gg</span>
+      </div>
+      <div class="header-searchbar">
+        <input id="userInputName" placeholder="Summoner's Name" class="header-name" type="text" name="Summoner's name">
+        <select id="userInputRegion" class="header-region" name="">
+          <option value="euw">EUW</option>
+        </select>
+        <button id="userInputButton" onclick="userSubmit()" type="button" name="submit">Search</button>
+      </div>
+    </div>
+    <div class="pagecontent">
+      <div class="profile">
+        <img id="profileIcon" width="200px" height="200px">
+        <span id="profileName">DiREKT</span>
+        <span id="profileLevel">Level 199</span>
+        <span id="profileRank">Silver I</span>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    document.getElementById("profileIcon").style.display = "none";
+    document.getElementById("profileName").style.display = "none";
+    document.getElementById("profileLevel").style.display = "none";
+    document.getElementById("profileRank").style.display = "none";
+  </script>
+</html>
