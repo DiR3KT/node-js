@@ -1,0 +1,118 @@
+@font-face {
+  font-family: Beaufort;
+  src: url(../../assets/fonts/Beaufort-Bold.ttf) format('truetype'),
+       url(../../assets/fonts/Beaufort-Bold.woff2) format('woff2'),
+       url(../../assets/fonts/Beaufort-Bold.woff) format('woff');
+       font-weight: bold;
+}
+@font-face {
+  font-family: Beaufort;
+  src: url(../../assets/fonts/Beaufort-Regular.ttf) format('truetype'),
+       url(../../assets/fonts/Beaufort-Regular.woff2) format('woff2'),
+       url(../../assets/fonts/Beaufort-Regular.woff) format('woff');
+       font-weight: normal;
+}
+
+html {
+  background-color: rgb(153, 153, 153);
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.header {
+  height: 8%;
+  width: 100%;
+  padding: 15px;
+  margin: 0px;
+  background-color: rgb(126, 143, 176);
+}
+
+.header-title {
+  font-size: 50px;
+  height: 100%;
+  width: 30%;
+  float: left;
+  font-family: Beaufort;
+  font-weight: bold;
+  margin-left: 3%;
+  text-align: center;
+}
+
+input#userInputName {
+  font-size: 27px;
+  font-family: Beaufort;
+  font-weight: normal;
+  width: 50%;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+select#userInputRegion {
+  font-size: 30px;
+  font-family: Beaufort;
+  font-weight: bold;
+  width: 20%;
+}
+
+button#userInputButton {
+  font-size: 30px;
+  font-family: Beaufort;
+  font-weight: bold;
+  width: 20%;
+}
+
+.header-searchbar {
+  height: 100%;
+  width: 60%;
+  float: right;
+  font-size: 50px;
+  align-content: center;
+  margin-right: 2%;
+}
+
+.pagecontent {
+  height: 80%;
+  max-width: 600px;
+  padding: 40px 40px;
+  margin: 30px auto;
+  background-color: white;
+}
+
+#profileIcon {
+  float: left;
+}
+
+#profileName {
+  vertical-align: top;
+  font-family: Beaufort;
+  font-weight: bold;
+  font-size: 55px;
+  margin-left: 230px;
+  position: absolute;
+}
+
+#profileLevel {
+  position: absolute;
+  font-family: Beaufort;
+  font-weight: normal;
+  font-size: 30px;
+  margin-top: 75px;
+  margin-left: 230px;
+}
+
+#profileRank {
+  position: absolute;
+  font-family: Beaufort;
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 130px;
+  margin-left: 230px;
+}
