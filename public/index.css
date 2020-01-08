@@ -1,15 +1,13 @@
 @font-face {
   font-family: Beaufort;
-  src: url(../../assets/fonts/Beaufort-Bold.ttf) format('truetype'),
-       url(../../assets/fonts/Beaufort-Bold.woff2) format('woff2'),
-       url(../../assets/fonts/Beaufort-Bold.woff) format('woff');
+  src: url(/Beaufort-Bold.ttf) format('truetype'),
+       url(/Beaufort-Bold.woff) format('woff');
        font-weight: bold;
 }
 @font-face {
   font-family: Beaufort;
-  src: url(../../assets/fonts/Beaufort-Regular.ttf) format('truetype'),
-       url(../../assets/fonts/Beaufort-Regular.woff2) format('woff2'),
-       url(../../assets/fonts/Beaufort-Regular.woff) format('woff');
+  src: url(/Beaufort-Regular.ttf) format('truetype'),
+       url(/Beaufort-Regular.woff) format('woff');
        font-weight: normal;
 }
 
