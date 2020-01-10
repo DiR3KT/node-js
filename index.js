@@ -3,8 +3,8 @@ var request = require("request");
 var cors = require('cors');
 var app = express();
 
-var port = process.env.PORT || 8080; //Useful for Heroku hosting
-var api_key = ""; //Your API key from Riot
+var port = process.env.port || 80; //Useful for Heroku hosting
+var api_key = process.env.api_key; //Your API key from Riot
 
 app.use(cors()); //Disables CORS
 app.use(express.static("public"));
