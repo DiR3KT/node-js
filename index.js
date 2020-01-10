@@ -17,7 +17,7 @@ app.get("/", function(request, response) {
 //API call: champion rotation.
 app.get('/championRotation', function(req, res){
   request('https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='+api_key, function (error, response, body) {
-    res.jsonp(body);
+    res.jsonp(JSON.parse(body));
   })
 })
 
